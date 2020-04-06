@@ -1,0 +1,14 @@
+<target name="yguard">
+    <taskdef name="yguard"
+             classname="com.yworks.yguard.YGuardTask"
+             classpath="yguard.jar"/>
+    <yguard>
+        <inoutpairs resources="auto">
+            <fileset dir="${input-lib-dir}">
+                <include name="myapp*.jar"/>
+                <exclude name="*_obf.jar"/>
+            </fileset>
+            <mapper type="glob" from="*.jar" to="*_obf.jar"/>
+        </inoutpairs>
+    </yguard>
+</target>

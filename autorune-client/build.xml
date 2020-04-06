@@ -1,0 +1,27 @@
+<yguard>
+
+    <inoutpair in="/target/autorune-client-1.0-SNAPSHOT.jar" out="test-obf.jar"/>
+
+    <!-- don't let the obfuscator remove the "Deprecated" -->
+    <!-- attributes from the .class file entries -->
+    <attribute name="Deprecated"/>
+
+    <shrink
+            logfile="shrinklog.xml">
+        <keep>
+            <class classes="protected"
+                   methods="protected"
+                   fields="protected"/>
+        </keep>
+    </shrink>
+
+    <rename mainclass="io.autorune.Main"
+            logfile="obflog.xml">
+        <keep>
+            <class classes="protected"
+                   methods="protected"
+                   fields="protected"/>
+        </keep>
+    </rename>
+
+</yguard>
